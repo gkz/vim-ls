@@ -33,7 +33,7 @@ For more information about LiveScript see [gkz.github.com/LiveScript](http://gkz
         vim-ls/
 
 That's it. Pathogen should handle the rest. Opening a file with a `.ls`
-extension or a `Cokefile` will load everything.
+extension or a `Slakefile` will load everything.
 
 ### Updating
 
