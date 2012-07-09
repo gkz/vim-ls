@@ -12,7 +12,7 @@ let b:current_syntax = "ls"
 " Highlight long strings.
 syntax sync minlines=100
 
-setlocal iskeyword=48-57,A-Z,$,a-z,_
+setlocal iskeyword=48-57,A-Z,$,a-z,_,-
 
 syntax match lsIdentifier /[$A-Za-z_]\k*\(-[a-zA-Z]\+\)*/
 highlight default link lsIdentifier Identifier
