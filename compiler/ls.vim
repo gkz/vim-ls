@@ -41,7 +41,7 @@ function! s:SetMakePrg()
 endfunction
 
 " Set a dummy compiler so we can check whether to set locally or globally.
-CompilerSet makeprg=livescript
+CompilerSet makeprg=ls
 call s:SetMakePrg()
 
 CompilerSet errorformat=%EFailed\ at:\ %f,
