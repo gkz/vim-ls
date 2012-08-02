@@ -26,13 +26,13 @@ highlight default link lsStatement Statement
 syntax match lsRepeat /\<\%(for\%( own\| ever\)\?\|while\|until\)\>/
 highlight default link lsRepeat Repeat
 
-syntax match lsConditional /\<\%(if\|else\|unless\|switch\|case\|when\|default\)\>/
+syntax match lsConditional /\<\%(if\|else\|unless\|switch\|case\|when\|default\|match\)\>/
 highlight default link lsConditional Conditional
 
 syntax match lsException /\<\%(try\|catch\|finally\)\>/
 highlight default link lsException Exception
 
-syntax match lsKeyword /\<\%(new\|in\%(stanceof\)\?\|typeof\|delete\|and\|o[fr]\|not\|is\|isnt\|imp\%(ort\%( all\)\?\|lements\)\|extends\|from\|to\|til\|by\|do\|then\|function\|class\|let\|with\|export\|const\|var\|eval\|super\|fallthrough\|debugger\)\>/ 
+syntax match lsKeyword /\<\%(new\|in\%(stanceof\)\?\|typeof\|delete\|and\|o[fr]\|not\|is\|isnt\|imp\%(ort\%( all\)\?\|lements\)\|extends\|from\|to\|til\|by\|do\|then\|function\|class\|let\|with\|export\|const\|var\|eval\|super\|fallthrough\|debugger\|where\)\>/ 
 highlight default link lsKeyword Keyword
 
 syntax match lsBoolean /\<\%(true\|false\|yes\|no\|on\|off\|null\|void\)\>/
