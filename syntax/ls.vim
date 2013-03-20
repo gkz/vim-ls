@@ -1,4 +1,4 @@
-" Language:    LiveScript " 
+" Language:    LiveScript "
 " Maintainer:  George Zahariev
 " URL:         http://github.com/gkz/vim-ls
 " License:     WTFPL
@@ -32,7 +32,7 @@ highlight default link lsConditional Conditional
 syntax match lsException /\<\%(try\|catch\|finally\)\>/
 highlight default link lsException Exception
 
-syntax match lsKeyword /\<\%(new\|in\%(stanceof\)\?\|typeof\|delete\|and\|o[fr]\|not\|xor\|is\|isnt\|imp\%(ort\%( all\)\?\|lements\)\|extends\|from\|to\|til\|by\|do\|then\|function\|class\|let\|with\|export\|const\|var\|eval\|super\|fallthrough\|debugger\|where\)\>/ 
+syntax match lsKeyword /\<\%(new\|in\%(stanceof\)\?\|typeof\|delete\|and\|o[fr]\|not\|xor\|is\|isnt\|imp\%(ort\%( all\)\?\|lements\)\|extends\|from\|to\|til\|by\|do\|then\|function\|class\|let\|with\|export\|const\|var\|eval\|super\|fallthrough\|debugger\|where\)\>/
 highlight default link lsKeyword Keyword
 
 syntax match lsBoolean /\<\%(true\|false\|yes\|no\|on\|off\|null\|void\)\>/
@@ -64,7 +64,7 @@ highlight default link lsNumberComment Comment
 " Matches hex numbers like 0xfff, 0x000.
 syntax match lsNumber /\<0x\x\+/
 " Matches N radix numbers like 2@1010.
-syntax match lsNumber 
+syntax match lsNumber
 \ /\<\%(\d*\)\~[0-9A-Za-z][0-9A-Za-z_]*/
 highlight default link lsNumber Number
 
@@ -125,7 +125,7 @@ highlight default link lsProp Label
 syntax match lsKey
 \ /\%(\.\@<!\.\%(=\?\s*\|\.\)\|[]})@?]\|::\)\zs\k\+/
 \ transparent
-\ contains=ALLBUT,lsIdentifier,lsContext,lsGlobal,lsReservedError,@lsReserved 
+\ contains=ALLBUT,lsNumberComment,lsIdentifier,lsContext,lsGlobal,lsReservedError,@lsReserved
 
 " Displays an error for trailing whitespace.
 syntax match lsSpaceError /\s\+$/ display
