@@ -93,18 +93,18 @@ can removed for gVim.
 
 #### Default compiler options
 
-The `LiveScriptMake` command passes any options in the `ls_make_options`
+The `LiveScriptMake` command passes any options in the `livescript_make_options`
 variable along to the compiler. You can use this to set default options:
 
-    let ls_make_options = '--bare'
+    let livescript_make_options = '--bare'
 
 #### Path to compiler
 
 To change the compiler used by `LiveScriptMake` and `LiveScriptCompile`, set
-`ls_compiler` to the full path of an executable or the filename of one
+`livescript_compiler` to the full path of an executable or the filename of one
 in your `$PATH`:
 
-    let ls_compiler = '/usr/bin/livescript'
+    let livescript_compiler = '/usr/bin/livescript'
 
 This option is set to `livescript` by default.
 
