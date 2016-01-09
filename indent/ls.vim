@@ -22,7 +22,7 @@ endif
 
 " Keywords to indent after
 let s:INDENT_AFTER_KEYWORD = '^\%(if\|unless\|else\|for\|while\|until\|'
-\                          . 'loop\|case\|default\|try\|catch\|finally\|'
+\                          . 'loop\|case\||\|default\|try\|catch\|finally\|'
 \                          . 'class\|do\|new\|let\|with\|function\)\>'
 
 " Operators to indent after
@@ -115,7 +115,7 @@ function! s:ShouldSkip(startlinenum, linenum, col)
   endif
 
   " Check for a single-line statement that isn't adjacent.
-  if s:SmartSearch(a:linenum, '\<then\>') && a:startlinenum - a:linenum > 1
+  if s:SmartSearch(a:linenum, '\<then\>\|=>') && a:startlinenum - a:linenum > 1
     return 1
   endif
 
@@ -162,7 +162,7 @@ function! s:GetMatch(curline)
   elseif firstchar == ']'
     return s:SearchPair('\[', '\]')
   elseif a:curline =~ '^else\>'
-    return s:SearchPair('\<\%(if\|unless\|case\|when\)\>', '\<else\>')
+    return s:SearchPair('\<\%(if\|unless\|case\||\|when\)\>', '\<else\>')
   elseif a:curline =~ '^catch\>'
     return s:SearchPair('\<try\>', '\<catch\>')
   elseif a:curline =~ '^finally\>'
@@ -231,7 +231,7 @@ function! s:GetLiveScriptIndent(curlinenum)
   " Indent after these keywords and compound assignments if they aren't a
   " single-line statement.
   if prevline =~ s:INDENT_AFTER_KEYWORD || prevline =~ s:COMPOUND_ASSIGNMENT
-    if !s:SmartSearch(prevlinenum, '\<then\>') && prevline !~ s:SINGLE_LINE_ELSE
+    if !s:SmartSearch(prevlinenum, '\<then\>\|=>') && prevline !~ s:SINGLE_LINE_ELSE
       return previndent + &shiftwidth
     endif
   endif
@@ -245,7 +245,7 @@ function! s:GetLiveScriptIndent(curlinenum)
   " aren't a single-line statement.
   if prevline =~ s:OUTDENT_AFTER
     if !s:SmartSearch(prevlinenum, s:POSTFIX_CONDITION) ||
-    \   s:SmartSearch(prevlinenum, '\<then\>')
+    \   s:SmartSearch(prevlinenum, '\<then\>\|=>')
       return previndent - &shiftwidth
     endif
   endif

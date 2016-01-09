@@ -26,13 +26,16 @@ highlight default link lsStatement Statement
 syntax match lsRepeat /\<\%(for\%( own\| ever\)\?\|while\|until\)\>/
 highlight default link lsRepeat Repeat
 
-syntax match lsConditional /\<\%(if\|else\|unless\|switch\|case\|when\|default\|match\)\>/
+syntax match lsConditional /\<\%(if\|then\|else\|unless\|switch\|match\)\>\|=>/
 highlight default link lsConditional Conditional
+
+syntax match lsLabel /\<\%(when\|case\|default\)\>\||\|^\s\+:[$A-Za-z_]\k*\%(-[a-zA-Z]\+\)*/
+highlight default link lsLabel Label
 
 syntax match lsException /\<\%(try\|catch\|finally\)\>/
 highlight default link lsException Exception
 
-syntax match lsKeyword /\<\%(new\|in\%(stanceof\)\?\|typeof\|delete\|and\|o[fr]\|not\|xor\|is\|isnt\|imp\%(ort\%( all\)\?\|lements\)\|extends\|loop\|from\|to\|til\|by\|do\|then\|function\|class\|let\|with\|export\|const\|var\|eval\|super\|fallthrough\|debugger\|where\|yield\)\>/
+syntax match lsKeyword /\<\%(new\|in\%(stanceof\)\?\|typeof\|delete\|and\|o[fr]\|not\|xor\|is\|isnt\|imp\%(ort\%( all\)\?\|lements\)\|extends\|loop\|from\|to\|til\|by\|do\|function\|class\|let\|with\|export\|const\|var\|eval\|super\|fallthrough\|debugger\|where\|yield\)\>/
 highlight default link lsKeyword Keyword
 
 syntax match lsBoolean /\<\%(true\|false\|yes\|no\|on\|off\|null\|void\)\>/
